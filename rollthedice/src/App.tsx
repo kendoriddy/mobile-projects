@@ -55,8 +55,7 @@ function App(): JSX.Element {
     }
   };
   return (
-    <View>
-      <Text>Hello</Text>
+    <View style={styles.container}>
       <Dice imageUrl={diceImage} />
       <Pressable onPress={rollDiceOnTap}>
         <Text style={styles.rollDiceBtnText}>Roll Dice</Text>
