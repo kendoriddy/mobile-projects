@@ -24,10 +24,12 @@ const Dice = ({imageUrl}: DiceProps): JSX.Element => {
 };
 
 function App(): JSX.Element {
+  const [diceImage, setDiceImage] =
+    React.useState<ImageSourcePropType>(DiceOne);
   return (
     <View>
       <Text>Hello</Text>
-      <Dice imageUrl={DiceOne} />
+      <Dice imageUrl={diceImage} />
     </View>
   );
 }
