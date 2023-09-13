@@ -3,6 +3,7 @@ import type {PropsWithChildren} from 'react';
 import {
   Image,
   ImageSourcePropType,
+  Pressable,
   StyleSheet,
   Text,
   useColorScheme,
@@ -26,10 +27,40 @@ const Dice = ({imageUrl}: DiceProps): JSX.Element => {
 function App(): JSX.Element {
   const [diceImage, setDiceImage] =
     React.useState<ImageSourcePropType>(DiceOne);
+
+  const rollDiceOnTap = () => {
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+    switch (randomNumber) {
+      case 1:
+        setDiceImage(DiceOne);
+        break;
+      case 2:
+        setDiceImage(DiceTwo);
+        break;
+      case 3:
+        setDiceImage(DiceThree);
+        break;
+      case 4:
+        setDiceImage(DiceFour);
+        break;
+      case 5:
+        setDiceImage(DiceFive);
+        break;
+      case 6:
+        setDiceImage(DiceSix);
+        break;
+      default:
+        setDiceImage(DiceOne);
+    }
+  };
   return (
     <View>
       <Text>Hello</Text>
       <Dice imageUrl={diceImage} />
+      <Pressable onPress={rollDiceOnTap}>
+        <Text style={styles.rollDiceBtnText}>Roll Dice</Text>
+      </Pressable>
     </View>
   );
 }
