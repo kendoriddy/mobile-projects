@@ -15,6 +15,7 @@ import DiceThree from '../assets/Three.png';
 import DiceFour from '../assets/Four.png';
 import DiceFive from '../assets/Five.png';
 import DiceSix from '../assets/Six.png';
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 type DiceProps = PropsWithChildren<{
   imageUrl: ImageSourcePropType;
